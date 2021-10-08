@@ -18,4 +18,15 @@ public class Sistema {
         return ServicoCliente.cadastrarCliente(nome,cpf,email);
 
     }
+
+    // <== Cadastrar vendedor Responsavel
+    public static VendedorResponsavel cadastrarVendendorRes(){
+        System.out.println("-------------------------------------");
+        String nome = obterDados("Digite o nome do vendedor: ").nextLine();
+        String cpf = obterDados("Digite o  CPF do vendedor: ").nextLine();
+        String email = obterDados("digite o e-mail do vendedor: ").nextLine();
+
+        return ServicoVendedorResponsavel.cadastrarVendedorRes(nome,cpf,email);
+
+    }
 }

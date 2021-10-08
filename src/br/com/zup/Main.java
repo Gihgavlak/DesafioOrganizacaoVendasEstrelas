@@ -6,5 +6,8 @@ public class Main {
 	Sistema.cadastrarCliente();
 	ServicoCliente.exibirClientes();
 
+	Sistema.cadastrarVendendorRes();
+	ServicoVendedorResponsavel.exibirVendedor();
+
     }
 }
