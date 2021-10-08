@@ -1,6 +1,8 @@
 package br.com.zup;
 
 public class Venda {
+    private String produto;
+    private double valorProduto;
     private Cliente cliente;
     private VendedorResponsavel vendedorResponsavel;
     private double valorSerPago;
@@ -10,12 +12,31 @@ public class Venda {
 
     }
 
-    public Venda(Cliente cliente, VendedorResponsavel vendedorResponsavel, double valorSerPago, String dataDeVencimento) {
+    public Venda(String produto, double valorProduto ,Cliente cliente, VendedorResponsavel vendedorResponsavel, double valorSerPago, String dataDeVencimento) {
+        this.produto = produto;
+        this.valorProduto = valorProduto;
         this.cliente = cliente;
         this.vendedorResponsavel = vendedorResponsavel;
         this.valorSerPago = valorSerPago;
         this.dataDeVencimento = dataDeVencimento;
 
+
+    }
+
+    public String getProduto() {
+        return produto;
+    }
+
+    public void setProduto(String produto) {
+        this.produto = produto;
+    }
+
+    public double getValorProduto() {
+        return valorProduto;
+    }
+
+    public void setValorProduto(double valorProduto) {
+        this.valorProduto = valorProduto;
     }
 
     public Cliente getCliente() {
@@ -53,6 +74,8 @@ public class Venda {
     @Override
     public String toString() {
         StringBuilder retorno = new StringBuilder();
+        retorno.append("\n Produto: "+produto);
+        retorno.append("\n Valor do produto: "+valorProduto);
         retorno.append("\n Cliente: "+cliente);
         retorno.append("\n Vendedor Responsavel: "+vendedorResponsavel);
         retorno.append("\n Valor a ser pago: "+valorSerPago);
