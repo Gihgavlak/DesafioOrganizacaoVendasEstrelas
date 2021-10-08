@@ -1,9 +1,20 @@
 package br.com.zup;
 
-public class Pessoa {
+public abstract class Pessoa {
     private String nome;
     private String cpf;
     private String email;
+
+    public Pessoa() {
+
+    }
+
+    public Pessoa(String nome, String cpf, String email) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.email = email;
+
+    }
 
     public String getNome() {
         return nome;
@@ -29,20 +40,13 @@ public class Pessoa {
         this.email = email;
     }
 
-    public Pessoa(String nome, String cpf, String email) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.email = email;
-
-
-    }
 
     @Override
     public String toString() {
         StringBuilder retorno = new StringBuilder();
-        retorno.append("\n Nome: " +nome);
-        retorno.append("\n CPF: "+cpf);
-        retorno.append("\n Email: "+email);
+        retorno.append("\n Nome: " + nome);
+        retorno.append("\n CPF: " + cpf);
+        retorno.append("\n Email: " + email);
         return retorno.toString();
 
     }
