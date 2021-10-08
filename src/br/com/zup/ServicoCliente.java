@@ -13,4 +13,14 @@ public class ServicoCliente {
         clientes.add(clienteCadastrado);
         return clienteCadastrado;
     }
+
+    //Exibir a lista dos clientes cadstrados
+    public static List<Cliente>exibirClientes(){
+        for (Cliente referencia: clientes) {
+            System.out.println(referencia);
+        }
+        return clientes;
+    }
+
+
 }
