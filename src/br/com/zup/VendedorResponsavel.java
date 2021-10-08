@@ -1,4 +1,15 @@
 package br.com.zup;
 
-public class VendedorResponsavel {
+public class VendedorResponsavel extends Pessoa{
+
+
+    public VendedorResponsavel() {
+
+    }
+
+    public VendedorResponsavel(String nome, String cpf, String email) {
+        super(nome, cpf, email);
+
+    }
+
 }
