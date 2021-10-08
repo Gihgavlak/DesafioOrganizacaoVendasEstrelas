@@ -1,2 +1,4 @@
-package br.com.zup;public class Sistema {
+package br.com.zup;
+
+public class Sistema {
 }

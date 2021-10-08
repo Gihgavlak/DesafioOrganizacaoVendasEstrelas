@@ -1,4 +1,4 @@
 package br.com.zup;
 
-public class ServiceCliente {
+public class ServicoCliente {
 }
