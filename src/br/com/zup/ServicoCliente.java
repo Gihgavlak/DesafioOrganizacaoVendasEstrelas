@@ -7,9 +7,19 @@ public class ServicoCliente {
 
     public static List<Cliente> clientes = new ArrayList<>();
 
+    // verificar cpf repetido
+    public static void verificarCpfRepetido(String cpf)throws Exception{
+        for(Cliente referencia : clientes){
+            if(referencia.getCpf().equals(cpf)){
+                throw new Exception("CPF já cadastrado");
+            }
+        }
+    }
+
     // Cadastrar cliente ==>
     public static Cliente cadastrarCliente(String nome, String cpf, String email)throws Exception{
         ServicoVendedorResponsavel.validarEmail(email);
+        verificarCpfRepetido(cpf);
         Cliente clienteCadastrado = new Cliente (nome, cpf, email);
         clientes.add(clienteCadastrado);
         return clienteCadastrado;

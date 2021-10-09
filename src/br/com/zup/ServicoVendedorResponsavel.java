@@ -14,9 +14,19 @@ public class ServicoVendedorResponsavel {
         }
     }
 
+    //método para verificar cpf repetido
+    public static void verificarCpfRepetido(String cpf) throws Exception{
+        for (VendedorResponsavel referencia: vendedoresResponsaveis){
+            if (referencia.getCpf().equals(cpf)){
+                throw new Exception("Cpf já cadastrado!");
+            }
+        }
+    }
+
     //Cadastrar o vendedor responsável
     public static VendedorResponsavel cadastrarVendedorRes(String nome, String cpf, String email) throws Exception {
         validarEmail(email);
+        verificarCpfRepetido(cpf);
         VendedorResponsavel vendedorCadastrado = new VendedorResponsavel(nome,cpf,email);
         vendedoresResponsaveis.add(vendedorCadastrado);
         return vendedorCadastrado;
