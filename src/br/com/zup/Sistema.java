@@ -22,7 +22,7 @@ public class Sistema {
     }
 
     // <== Cadastrar Cliente
-    public static Cliente cadastrarCliente() {
+    public static Cliente cadastrarCliente() throws Exception{
         System.out.println("-------------------------------------");
         String nome = obterDados("Digite o nome do cliente: ").nextLine();
         String cpf = obterDados("Digite o  CPF do cliente: ").nextLine();
@@ -32,18 +32,17 @@ public class Sistema {
     }
 
     // <== Cadastrar vendedor Responsavel
-    public static VendedorResponsavel cadastrarVendendorRes() {
+    public static VendedorResponsavel cadastrarVendendorRes() throws Exception{
         System.out.println("-------------------------------------");
         String nome = obterDados("Digite o nome do vendedor: ").nextLine();
         String cpf = obterDados("Digite o  CPF do vendedor: ").nextLine();
         String email = obterDados("digite o e-mail do vendedor: ").nextLine();
-
         return ServicoVendedorResponsavel.cadastrarVendedorRes(nome, cpf, email);
 
     }
 
     // <==Cadastar venda
-    public static Venda cadastrarVenda() {
+    public static Venda cadastrarVenda() throws Exception {
         String produto = obterDados("Digite o nome do produto: ").nextLine();
         double valorProduto = obterDados("Digite o valor do produto: ").nextDouble();
         double valorSerPago = obterDados("Digite o valor a ser pago: ").nextDouble();
@@ -54,7 +53,7 @@ public class Sistema {
         return venda;
     }
 
-    public static void executar(){
+    public static void executar() throws Exception{
         boolean menu = true;
 
         while (menu){

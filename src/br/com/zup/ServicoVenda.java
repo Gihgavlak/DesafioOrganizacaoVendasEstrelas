@@ -7,7 +7,8 @@ public class ServicoVenda {
     private static List<Venda> vendas = new ArrayList<>();
 
     //cadastrar vendas==>
-    public static Venda cadastrarVenda(String produto,double valorProduto,Cliente cliente,VendedorResponsavel vendedorResponsavel,double valorSerPago, String dataDeVencimento){
+    public static Venda cadastrarVenda(String produto,double valorProduto,Cliente cliente,VendedorResponsavel vendedorResponsavel,double valorSerPago, String dataDeVencimento)throws Exception{
+
         Venda venda = new Venda(produto, valorProduto, cliente, vendedorResponsavel, valorSerPago, dataDeVencimento);
         vendas.add(venda);
         return venda;

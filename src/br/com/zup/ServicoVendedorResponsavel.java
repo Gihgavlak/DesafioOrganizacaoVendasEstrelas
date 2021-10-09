@@ -6,8 +6,17 @@ import java.util.List;
 public class ServicoVendedorResponsavel {
     public static List<VendedorResponsavel> vendedoresResponsaveis = new ArrayList<>();
 
+    //validar email
+    public static void validarEmail(String email) throws Exception {
+        if (!email.contains("@")) {
+            throw new Exception("Digite um email válido");
+
+        }
+    }
+
     //Cadastrar o vendedor responsável
-    public static VendedorResponsavel cadastrarVendedorRes(String nome, String cpf, String email) {
+    public static VendedorResponsavel cadastrarVendedorRes(String nome, String cpf, String email) throws Exception {
+        validarEmail(email);
         VendedorResponsavel vendedorCadastrado = new VendedorResponsavel(nome,cpf,email);
         vendedoresResponsaveis.add(vendedorCadastrado);
         return vendedorCadastrado;
