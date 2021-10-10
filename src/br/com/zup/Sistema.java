@@ -59,7 +59,7 @@ public class Sistema {
     //<== Pesquisar compras do cliente pelo cpf
     public static List<Venda> pesquisarComprasCliente() throws Exception{
         String cpf = obterDados("Digite o cpf que deseja pesquisar:").nextLine();
-
+        ServicoCliente.pesquisarCliente(cpf);
         List<Venda> vendas = ServicoVenda.pesquisarComprasCliente(cpf);
         return vendas;
     }
@@ -89,14 +89,14 @@ public class Sistema {
                 ServicoCliente.exibirClientes();
 
             } else if (opcao ==4){
-                System.out.println(pesquisarComprasCliente());
+                ServicoVendedorResponsavel.exibirVendedor();
 
             }else if (opcao==5){
-                System.out.println(pesquisarVendaVendedor());
+                System.out.println(pesquisarComprasCliente());
 
             }
             else if (opcao == 6){
-                ServicoVendedorResponsavel.exibirVendedor();
+                System.out.println(pesquisarVendaVendedor());
 
             } else if (opcao == 7){
                 System.out.println("Volte Sempre e Traga mais Gente!!!!");

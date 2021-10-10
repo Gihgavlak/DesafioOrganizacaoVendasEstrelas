@@ -8,18 +8,18 @@ public class ServicoCliente {
     public static List<Cliente> clientes = new ArrayList<>();
 
     // verificar cpf repetido
-    public static void verificarCpfRepetido(String cpf)throws Exception{
+    public static void verificarCpfRepetido(String cpfCliente)throws Exception{
         for(Cliente referencia : clientes){
-            if(referencia.getCpf().equals(cpf)){
+            if(referencia.getCpf().equals(cpfCliente)){
                 throw new Exception("CPF já cadastrado");
             }
         }
     }
 
     //Metodo para verificar e-mail repetidos
-    public static void verificarEmailRepetido(String email) throws Exception{
+    public static void verificarEmailRepetido(String emailCliente) throws Exception{
         for (Cliente referencia : clientes){
-            if (referencia.getEmail().equals(email)){
+            if (referencia.getEmail().equals(emailCliente)){
                 throw new Exception("E-mail ja cadastrado");
             }
         }
@@ -35,22 +35,23 @@ public class ServicoCliente {
         return clienteCadastrado;
     }
 
-    //Exibir a lista dos clientes cadstrados
-    public static List<Cliente>exibirClientes(){
+    //Exibir a lista dos clientes cadastrados
+    public static void exibirClientes(){
+        System.out.println("Quantidade de Clientes: "+clientes.size());
         for (Cliente referencia: clientes) {
             System.out.println(referencia);
         }
-        return clientes;
+
     }
 
-    //<== Metodo para pesquisar compras do cliente por cpf
-    public static Cliente pesquisarComprasCliente (String cpf) throws Exception{
+    //<== Metodo para pesquisar cliente por cpf
+    public static Cliente pesquisarCliente (String cpfCliente) throws Exception{
         for (Cliente referencia : clientes){
-            if (referencia.getCpf().equals(cpf)){
+            if (referencia.getCpf().equals(cpfCliente)){
                 return referencia;
             }
         }
-        throw new Exception("Nenhum cpf cadastrado");
+        throw new Exception("Cpf não encontrado");
     }
 
 }

@@ -20,6 +20,7 @@ public class ServicoVenda {
             System.out.println(referencia);
 
         }
+
     }
 
     //Metodo para pesquisar compras do cliente pelo cpf ==>

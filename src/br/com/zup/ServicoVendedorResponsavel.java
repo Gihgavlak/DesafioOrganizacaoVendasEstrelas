@@ -45,6 +45,7 @@ public class ServicoVendedorResponsavel {
 
     //Exibir a lista dos vendedores responsáveis
     public static List<VendedorResponsavel> exibirVendedor(){
+        System.out.println("Quantidade de Vendedores: "+vendedoresResponsaveis.size());
         for (VendedorResponsavel referencia: vendedoresResponsaveis) {
             System.out.println(referencia);
         }
