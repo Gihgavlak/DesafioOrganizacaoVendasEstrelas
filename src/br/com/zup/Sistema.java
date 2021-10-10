@@ -1,5 +1,6 @@
 package br.com.zup;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Sistema {
@@ -51,6 +52,14 @@ public class Sistema {
         VendedorResponsavel vendedorResponsavel = cadastrarVendendorRes();
         Venda venda = ServicoVenda.cadastrarVenda(produto, valorProduto, cliente, vendedorResponsavel, valorSerPago, dataDeVencimento);
         return venda;
+    }
+
+    //<== Pesquisar vendas do cliente pelo cpf
+    public static List<Venda> pesquisarVendaCliente() throws Exception{
+        String cpf = obterDados("Digite o cpf que deseja pesquisar:").nextLine();
+
+        List<Venda> vendas = ServicoVenda.pesquisarVendaCliente(cpf);
+        return vendas;
     }
 
     public static void executar() throws Exception{
