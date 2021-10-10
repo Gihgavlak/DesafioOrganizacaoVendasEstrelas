@@ -33,6 +33,10 @@ public class Sistema {
         return ServicoCliente.cadastrarCliente(nome, cpf, email);
 
     }
+    //Exibir clientes
+    public static void exibirClientes(){
+        ServicoCliente.exibirClientes();
+    }
 
     // <== Cadastrar vendedor Responsavel
     public static VendedorResponsavel cadastrarVendendorRes() throws Exception{
@@ -42,6 +46,10 @@ public class Sistema {
         String email = obterDados("digite o e-mail do vendedor: ").nextLine();
         return ServicoVendedorResponsavel.cadastrarVendedorRes(nome, cpf, email);
 
+    }
+    //Exibir vendedor
+    public static void exibirVendedor(){
+        ServicoVendedorResponsavel.exibirVendedor();
     }
 
     // <==Cadastar venda
@@ -56,12 +64,17 @@ public class Sistema {
         return venda;
     }
 
+    //exibir vendas
+    public static void exibirVendas(){
+        ServicoVenda.exibirVendas();
+    }
+
+
     //<== Pesquisar compras do cliente pelo cpf
     public static List<Venda> pesquisarComprasCliente() throws Exception{
         String cpf = obterDados("Digite o cpf que deseja pesquisar:").nextLine();
-        ServicoCliente.pesquisarCliente(cpf);
-        List<Venda> vendas = ServicoVenda.pesquisarComprasCliente(cpf);
-        return vendas;
+        Cliente cliente = ServicoCliente.pesquisarCliente(cpf);
+        return ServicoVenda.pesquisarComprasCliente(cliente);
     }
 
     //<== Pesquisar vendas do vendedor por e-mail
@@ -83,20 +96,20 @@ public class Sistema {
             if (opcao ==1){
                 cadastrarVenda();
             } else if (opcao == 2){
-                ServicoVenda.exibirVendas();
+                Sistema.exibirVendas();
 
             } else if (opcao == 3){
                 ServicoCliente.exibirClientes();
 
             } else if (opcao ==4){
-                ServicoVendedorResponsavel.exibirVendedor();
+                Sistema.exibirVendedor();
 
             }else if (opcao==5){
-                System.out.println(pesquisarComprasCliente());
+                Sistema.pesquisarComprasCliente();
 
             }
             else if (opcao == 6){
-                System.out.println(pesquisarVendaVendedor());
+                Sistema.pesquisarVendaVendedor();
 
             } else if (opcao == 7){
                 System.out.println("Volte Sempre e Traga mais Gente!!!!");

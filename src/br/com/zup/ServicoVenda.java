@@ -16,6 +16,7 @@ public class ServicoVenda {
 
     //Exibir menu
     public static void exibirVendas(){
+        System.out.println("Quantidade de vendas: "+vendas.size());
         for (Venda referencia:vendas) {
             System.out.println(referencia);
 
@@ -24,10 +25,10 @@ public class ServicoVenda {
     }
 
     //Metodo para pesquisar compras do cliente pelo cpf ==>
-    public static List<Venda> pesquisarComprasCliente(String cpf){
+    public static List<Venda> pesquisarComprasCliente(Cliente cliente){
         List<Venda> comprasCliente = new ArrayList<>();
         for (Venda referencia : vendas){
-            if (referencia.getCliente().getCpf().equals(cpf)){
+            if (referencia.getCliente().getCpf().equals(cliente)){
                 comprasCliente.add(referencia);
             }
         }
