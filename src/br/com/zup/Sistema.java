@@ -54,11 +54,11 @@ public class Sistema {
         return venda;
     }
 
-    //<== Pesquisar vendas do cliente pelo cpf
-    public static List<Venda> pesquisarVendaCliente() throws Exception{
+    //<== Pesquisar compras do cliente pelo cpf
+    public static List<Venda> pesquisarComprasCliente() throws Exception{
         String cpf = obterDados("Digite o cpf que deseja pesquisar:").nextLine();
 
-        List<Venda> vendas = ServicoVenda.pesquisarVendaCliente(cpf);
+        List<Venda> vendas = ServicoVenda.pesquisarComprasCliente(cpf);
         return vendas;
     }
 
