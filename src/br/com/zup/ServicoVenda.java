@@ -28,19 +28,21 @@ public class ServicoVenda {
     public static List<Venda> pesquisarComprasCliente(Cliente cliente){
         List<Venda> comprasCliente = new ArrayList<>();
         for (Venda referencia : vendas){
-            if (referencia.getCliente().getCpf().equals(cliente)){
+            if (referencia.getCliente().equals(cliente)){
                 comprasCliente.add(referencia);
+                System.out.println(referencia);
             }
         }
         return comprasCliente;
     }
 
     //Metodo para pesquisar vendas do vendedor por e-mail ==>
-    public static List<Venda> pesquisarVendaVendedor(String email){
+    public static List<Venda> pesquisarVendaVendedor(VendedorResponsavel vendedorResponsavel){
         List<Venda> vendasVendedor = new ArrayList<>();
         for (Venda referencia : vendas){
-            if (referencia.getCliente().getEmail().equals(email)){
+            if (referencia.getVendedorResponsavel().equals(vendedorResponsavel)){
                 vendasVendedor.add(referencia);
+                System.out.println(referencia);
             }
         }
         return vendasVendedor;

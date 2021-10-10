@@ -80,11 +80,10 @@ public class Sistema {
     //<== Pesquisar vendas do vendedor por e-mail
     public static List<Venda> pesquisarVendaVendedor() throws Exception{
         String email = obterDados("Digite o email que deseja pesquisar:").nextLine();
+        VendedorResponsavel vendedorResponsavel = ServicoVendedorResponsavel.pesquisarVendedor(email);
+        return ServicoVenda.pesquisarVendaVendedor(vendedorResponsavel);
 
-        List<Venda> vendas = ServicoVenda.pesquisarVendaVendedor(email);
-        return vendas;
     }
-
 
     public static void executar() throws Exception{
         boolean menu = true;
