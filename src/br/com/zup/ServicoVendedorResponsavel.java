@@ -14,6 +14,15 @@ public class ServicoVendedorResponsavel {
         }
     }
 
+    //Metodo para verificar e-mail repetidos
+    public static void verificarEmailRepetido(String email) throws Exception{
+        for (VendedorResponsavel referencia : vendedoresResponsaveis){
+            if (referencia.getEmail().equals(email)){
+                throw new Exception("E-mail ja cadastrado");
+            }
+        }
+    }
+
     //método para verificar cpf repetido
     public static void verificarCpfRepetido(String cpf) throws Exception{
         for (VendedorResponsavel referencia: vendedoresResponsaveis){
@@ -26,6 +35,7 @@ public class ServicoVendedorResponsavel {
     //Cadastrar o vendedor responsável
     public static VendedorResponsavel cadastrarVendedorRes(String nome, String cpf, String email) throws Exception {
         validarEmail(email);
+        verificarEmailRepetido(email);
         verificarCpfRepetido(cpf);
         VendedorResponsavel vendedorCadastrado = new VendedorResponsavel(nome,cpf,email);
         vendedoresResponsaveis.add(vendedorCadastrado);

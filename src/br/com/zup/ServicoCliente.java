@@ -16,9 +16,19 @@ public class ServicoCliente {
         }
     }
 
+    //Metodo para verificar e-mail repetidos
+    public static void verificarEmailRepetido(String email) throws Exception{
+        for (Cliente referencia : clientes){
+            if (referencia.getEmail().equals(email)){
+                throw new Exception("E-mail ja cadastrado");
+            }
+        }
+    }
+
     // Cadastrar cliente ==>
     public static Cliente cadastrarCliente(String nome, String cpf, String email)throws Exception{
         ServicoVendedorResponsavel.validarEmail(email);
+        verificarEmailRepetido(email);
         verificarCpfRepetido(cpf);
         Cliente clienteCadastrado = new Cliente (nome, cpf, email);
         clientes.add(clienteCadastrado);
