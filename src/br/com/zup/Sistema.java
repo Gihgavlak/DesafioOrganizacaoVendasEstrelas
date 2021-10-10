@@ -18,7 +18,9 @@ public class Sistema {
                 "\n|    2=> Para verificar lista das vendas           |" +
                 "\n|    3=> Para verificar a lista de clientes        |" +
                 "\n|    4=> Para verificar a lista de vendedores      |" +
-                "\n|    5=> Para sair do programa                     |" +
+                "\n|    5=> Para pesquisar as compras do cliente      |" +
+                "\n|    6=> Para pesquisar as vendas do Vendedor      |" +
+                "\n|    7=> Para sair do programa                     |" +
                 "\n+--------------------------------------------------+");
     }
 
@@ -62,6 +64,15 @@ public class Sistema {
         return vendas;
     }
 
+    //<== Pesquisar vendas do vendedor por e-mail
+    public static List<Venda> pesquisarVendaVendedor() throws Exception{
+        String email = obterDados("Digite o email que deseja pesquisar:").nextLine();
+
+        List<Venda> vendas = ServicoVenda.pesquisarVendaVendedor(email);
+        return vendas;
+    }
+
+
     public static void executar() throws Exception{
         boolean menu = true;
 
@@ -77,10 +88,17 @@ public class Sistema {
             } else if (opcao == 3){
                 ServicoCliente.exibirClientes();
 
-            } else if (opcao == 4){
+            } else if (opcao ==4){
+                System.out.println(pesquisarComprasCliente());
+
+            }else if (opcao==5){
+                System.out.println(pesquisarVendaVendedor());
+
+            }
+            else if (opcao == 6){
                 ServicoVendedorResponsavel.exibirVendedor();
 
-            } else if (opcao == 5){
+            } else if (opcao == 7){
                 System.out.println("Volte Sempre e Traga mais Gente!!!!");
                 menu = false;
 

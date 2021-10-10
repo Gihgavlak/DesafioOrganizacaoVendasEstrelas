@@ -43,5 +43,14 @@ public class ServicoCliente {
         return clientes;
     }
 
+    //<== Metodo para pesquisar compras do cliente por cpf
+    public static Cliente pesquisarComprasCliente (String cpf) throws Exception{
+        for (Cliente referencia : clientes){
+            if (referencia.getCpf().equals(cpf)){
+                return referencia;
+            }
+        }
+        throw new Exception("Nenhum cpf cadastrado");
+    }
 
 }

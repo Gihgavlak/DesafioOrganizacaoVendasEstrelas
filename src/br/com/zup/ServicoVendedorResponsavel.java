@@ -50,4 +50,14 @@ public class ServicoVendedorResponsavel {
         }
         return vendedoresResponsaveis;
     }
+
+    //<== Metodo para pesquisar vendas do vendedor por e-mail
+    public static VendedorResponsavel pesquisarVendedor(String email) throws Exception{
+        for (VendedorResponsavel referencia : vendedoresResponsaveis){
+            if (referencia.getEmail().equals(email)){
+                return referencia;
+            }
+        }
+        throw new Exception("Nenhum email cadastrado");
+    }
 }

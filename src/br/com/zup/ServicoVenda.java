@@ -33,5 +33,15 @@ public class ServicoVenda {
         return comprasCliente;
     }
 
+    //Metodo para pesquisar vendas do vendedor por e-mail ==>
+    public static List<Venda> pesquisarVendaVendedor(String email){
+        List<Venda> vendasVendedor = new ArrayList<>();
+        for (Venda referencia : vendas){
+            if (referencia.getCliente().getEmail().equals(email)){
+                vendasVendedor.add(referencia);
+            }
+        }
+        return vendasVendedor;
+    }
 
 }
