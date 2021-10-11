@@ -115,39 +115,80 @@ public class Sistema {
 
     }
 
-    public static void executar() throws Exception{
+    public static boolean executar() throws Exception{
         boolean menu = true;
 
-        while (menu){
+        while (menu) {
             menuInicial();
             int opcao = obterDados("Digite a opção desejada: ").nextInt();
 
-            if (opcao ==1){
-                cadastrarVenda();
-            } else if (opcao == 2){
-                Sistema.exibirVendas();
+            if (opcao==1){
+                boolean subMenu1 = true;
 
-            } else if (opcao == 3){
-                ServicoCliente.exibirClientes();
+                while (subMenu1){
 
-            } else if (opcao ==4){
-                Sistema.exibirVendedor();
+                    menuCadastro();
+                    opcao = obterDados("Digite a opção desejada: ").nextInt();
 
-            }else if (opcao==5){
-                Sistema.pesquisarComprasCliente();
+                    if(opcao == 1 ){
+                        cadastrarCliente();
+
+                    }else if(opcao == 2){
+                        cadastrarVendendorRes();
+
+                    }else if (opcao == 3){
+                        cadastrarVenda();
+
+                    }else if (opcao ==4){
+                        subMenu1 = false;
+
+                    }else {
+                        System.out.println("Opção invalida, digite uma opção válida");
+                    }
+                }
+            }
+            else if (opcao ==2 ){
+                boolean subMenu2 = true;
+
+                while (subMenu2){
+
+                    menuExibir();
+                    opcao = obterDados("digite a opção desejada:").nextInt();
+
+                    if(opcao == 1){
+                        exibirClientes();
+
+                    }
+                    else if (opcao ==2){
+                        exibirVendedor();
+
+                    }else if (opcao ==3){
+                        exibirVendas();
+
+                    }
+                    else if( opcao ==4){
+                        pesquisarComprasCliente();
+
+                    }else if(opcao ==5){
+                        pesquisarVendaVendedor();
+
+                    }else if (opcao ==6){
+                        subMenu2 = false;
+
+                    }else {
+                        System.out.println("Opção invalida, digite uma opçãp válida");
+                    }
+
+                }
+            }else if( opcao ==3 ){
+                menu=false;
+                System.out.println("\n Bye Bye ");
+
+            }else {
+                System.out.println("Opção invalida, digite uma opçãp válida");
 
             }
-            else if (opcao == 6){
-                Sistema.pesquisarVendaVendedor();
-
-            } else if (opcao == 7){
-                System.out.println("Volte Sempre e Traga mais Gente!!!!");
-                menu = false;
-
-            } else{
-                System.out.println("Digite uma opção válida");
-            }
-        }
+        } return menu;
     }
 
 }
