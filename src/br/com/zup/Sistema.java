@@ -78,12 +78,12 @@ public class Sistema {
 
     // <==Cadastar venda
     public static Venda cadastrarVenda() throws Exception {
+        Cliente cliente = pesquisarCliente();
+        VendedorResponsavel vendedorResponsavel = pesquisarVendedor();
         String produto = obterDados("Digite o nome do produto: ").nextLine();
         double valorProduto = obterDados("Digite o valor do produto: ").nextDouble();
         double valorSerPago = obterDados("Digite o valor a ser pago: ").nextDouble();
         String dataDeVencimento = obterDados("Digite a data de vencimento: ").nextLine();
-        Cliente cliente = cadastrarCliente();
-        VendedorResponsavel vendedorResponsavel = cadastrarVendendorRes();
         Venda venda = ServicoVenda.cadastrarVenda(produto, valorProduto, cliente, vendedorResponsavel, valorSerPago, dataDeVencimento);
         return venda;
     }
@@ -93,6 +93,12 @@ public class Sistema {
         ServicoVenda.exibirVendas();
     }
 
+    //Pesquisar Cliente
+    public static Cliente pesquisarCliente()throws Exception{
+        String cpfCliente = obterDados("\n Digite o CPF do cliente cadastrado: ").nextLine();
+        return ServicoCliente.pesquisarCliente(cpfCliente);
+
+    }
 
     //<== Pesquisar compras do cliente pelo cpf
     public static List<Venda> pesquisarComprasCliente() throws Exception{
