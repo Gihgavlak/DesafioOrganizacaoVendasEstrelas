@@ -111,7 +111,7 @@ public class Sistema {
     public static List<Venda> pesquisarVendaVendedor() throws Exception{
         String email = obterDados("Digite o email que deseja pesquisar:").nextLine();
         VendedorResponsavel vendedorResponsavel = ServicoVendedorResponsavel.pesquisarVendedor(email);
-        return ServicoVenda.pesquisarVendaVendedor(vendedorResponsavel);
+        return ServicoVenda.exibirVendaVendedor(vendedorResponsavel);
 
     }
 

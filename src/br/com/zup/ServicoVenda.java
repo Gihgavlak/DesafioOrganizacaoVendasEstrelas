@@ -37,7 +37,7 @@ public class ServicoVenda {
     }
 
     //Metodo para pesquisar vendas do vendedor por e-mail ==>
-    public static List<Venda> pesquisarVendaVendedor(VendedorResponsavel vendedorResponsavel){
+    public static List<Venda> exibirVendaVendedor(VendedorResponsavel vendedorResponsavel){
         List<Venda> vendasVendedor = new ArrayList<>();
         for (Venda referencia : vendas){
             if (referencia.getVendedorResponsavel().equals(vendedorResponsavel)){
