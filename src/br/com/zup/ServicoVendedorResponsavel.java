@@ -53,9 +53,9 @@ public class ServicoVendedorResponsavel {
     }
 
     //<== Metodo para pesquisar vendas do vendedor por e-mail
-    public static VendedorResponsavel pesquisarVendedor(String email) throws Exception{
+    public static VendedorResponsavel pesquisarVendedor(String emailVendedor) throws Exception{
         for (VendedorResponsavel referencia : vendedoresResponsaveis){
-            if (referencia.getEmail().equals(email)){
+            if (referencia.getEmail().equalsIgnoreCase(emailVendedor)){
                 return referencia;
             }
         }

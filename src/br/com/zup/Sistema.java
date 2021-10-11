@@ -70,6 +70,11 @@ public class Sistema {
     public static void exibirVendedor(){
         ServicoVendedorResponsavel.exibirVendedor();
     }
+    //Pesquisar vendedor
+    public static VendedorResponsavel pesquisarVendedor()throws Exception{
+        String emailVendedor= obterDados("Digite o e-mail do Vendedor").nextLine();
+        return ServicoVendedorResponsavel.pesquisarVendedor(emailVendedor);
+    }
 
     // <==Cadastar venda
     public static Venda cadastrarVenda() throws Exception {
