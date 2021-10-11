@@ -54,11 +54,11 @@ public class Venda {
         this.valorSerPago = valorSerPago;
     }
 
-    public String getDataDeVencimento() {
+    public String getDataDeRegistro() {
         return dataDeRegistro;
     }
 
-    public void setDataDeVencimento(String dataDeVencimento) {
+    public void setDataDeregistro(String dataDeVencimento) {
         this.dataDeRegistro = dataDeVencimento;
     }
 
