@@ -14,14 +14,33 @@ public class Sistema {
     public static void menuInicial() {
         System.out.println(" \n");
         System.out.println("+-------------Digite a opão desejada:-------------+" +
-                "\n|    1=> Para cadastrar venda                      |" +
-                "\n|    2=> Para verificar lista das vendas           |" +
-                "\n|    3=> Para verificar a lista de clientes        |" +
-                "\n|    4=> Para verificar a lista de vendedores      |" +
-                "\n|    5=> Para pesquisar as compras do cliente      |" +
-                "\n|    6=> Para pesquisar as vendas do Vendedor      |" +
-                "\n|    7=> Para sair do programa                     |" +
-                "\n+--------------------------------------------------+");
+                "\n|   1=> Para Cadastrar                            |" +
+                "\n|   2=> Para Exibir                               |" +
+                "\n|   3=> Para Sair                                 |" +
+                "\n+-------------------------------------------------+");
+    }
+
+    //Submenu de Cadastro
+    public static void menuCadastro(){
+        System.out.println("");
+        System.out.println("+------------Digite a opão desejada:--------------+" +
+                "\n|   1=> Cadastrar um Cliente                      |"+
+                "\n|   2=> Cadastrar um Vendedor                     |"+
+                "\n|   3=> Cadastrar Compras                         |"+
+                "\n|   4=> Para Sair                                 |"+
+                "\n+-------------------------------------------------+");
+    }
+
+    //SubMenu de Exibir
+    public static void menuExibir(){
+        System.out.println("+-------------Digite a opão desejada:-------------+" +
+                "\n|   1=> Para Exibir Clientes cadastrados          |"+
+                "\n|   2=> Para Exibir Vendedores cadastrados        |"+
+                "\n|   3=> Para Exibir as Vendas registradas         |" +
+                "\n|   4=> Para Exibir as Compras do Cliente         |"+
+                "\n|   5=> Para exibir as Vendas do Vendedor         |"+
+                "\n|   6=> Para voltar ao Menu Inicial|              |"+
+                "\n+-------------------------------------------------+");
     }
 
     // <== Cadastrar Cliente
