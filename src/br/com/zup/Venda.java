@@ -2,23 +2,21 @@ package br.com.zup;
 
 public class Venda {
     private String produto;
-    private double valorProduto;
     private Cliente cliente;
     private VendedorResponsavel vendedorResponsavel;
     private double valorSerPago;
-    private String dataDeVencimento;
+    private String dataDeRegistro;
 
     public Venda() {
 
     }
 
-    public Venda(String produto, double valorProduto ,Cliente cliente, VendedorResponsavel vendedorResponsavel, double valorSerPago, String dataDeVencimento) {
+    public Venda(String produto, Cliente cliente, VendedorResponsavel vendedorResponsavel, double valorSerPago, String dataDeVencimento) {
         this.produto = produto;
-        this.valorProduto = valorProduto;
         this.cliente = cliente;
         this.vendedorResponsavel = vendedorResponsavel;
         this.valorSerPago = valorSerPago;
-        this.dataDeVencimento = dataDeVencimento;
+        this.dataDeRegistro = dataDeVencimento;
 
 
     }
@@ -31,13 +29,6 @@ public class Venda {
         this.produto = produto;
     }
 
-    public double getValorProduto() {
-        return valorProduto;
-    }
-
-    public void setValorProduto(double valorProduto) {
-        this.valorProduto = valorProduto;
-    }
 
     public Cliente getCliente() {
         return cliente;
@@ -64,22 +55,21 @@ public class Venda {
     }
 
     public String getDataDeVencimento() {
-        return dataDeVencimento;
+        return dataDeRegistro;
     }
 
     public void setDataDeVencimento(String dataDeVencimento) {
-        this.dataDeVencimento = dataDeVencimento;
+        this.dataDeRegistro = dataDeVencimento;
     }
 
     @Override
     public String toString() {
         StringBuilder retorno = new StringBuilder();
         retorno.append("\n Produto: "+produto);
-        retorno.append("\n Valor do produto: "+valorProduto);
         retorno.append("\n Cliente: "+cliente);
         retorno.append("\n Vendedor Responsavel: "+vendedorResponsavel);
         retorno.append("\n Valor a ser pago: "+valorSerPago);
-        retorno.append("\n Data do vencimento: " +dataDeVencimento);
+        retorno.append("\n Data do vencimento: " +dataDeRegistro);
 
         return retorno.toString();
     }
